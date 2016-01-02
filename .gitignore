@@ -1,2 +1,15 @@
 # Ignore Mac DS_Store files
 .DS_Store
+
+# Ignore folders created by activator while runs activator command
+project/
+
+# Ignore folder created by activator while runs clean command
+target/
+
+# Ignore folder created by activator while runs run command
+logs/
+
+# Ignore generated DB files
+expenses.db.mv.db
+expenses.db.trace.db
