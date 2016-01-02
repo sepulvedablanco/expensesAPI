@@ -1,0 +1,6 @@
+@(financialMovementTypes: List[FinancialMovementType])
+<tiposMovimiento>
+	@for(financialMovementType <- financialMovementTypes) {
+		@_financialMovementType(financialMovementType)
+	}
+</tiposMovimiento>

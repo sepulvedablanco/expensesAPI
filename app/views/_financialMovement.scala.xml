@@ -1,0 +1,10 @@
+@(financialMovement: FinancialMovement)
+	<movimiento id="@financialMovement.getId()">
+		<importe>@financialMovement.getAmount()</importe>
+		<concepto>@financialMovement.getConcept()</concepto>
+		<fecha>@financialMovement.getTransactionDate()</fecha>
+		<gasto>@financialMovement.getExpense()</gasto>
+		@_financialMovementType(financialMovement.getFinancialMovementType())
+		@_financialMovementSubtype(financialMovement.getFinancialMovementSubtype())
+		@_bankAccount(financialMovement.getBankAccount())
+	</movimiento>

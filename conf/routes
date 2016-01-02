@@ -1,0 +1,30 @@
+GET     /                           		controllers.Application.index()
+
+POST    /user			                   controllers.Users.create()
+POST	/user/login				           controllers.Users.login()
+DELETE  /user/$uId<[0-9]*>                 controllers.Users.delete(uId: Long)
+PUT     /user/$uId<[0-9]*>                 controllers.Users.update(uId: Long)
+
+POST	/user/$uId<[0-9]*>/bankAccount				 controllers.BankAccounts.create(uId: Long)
+GET     /user/$uId<[0-9]*>/bankAccounts              controllers.BankAccounts.find(uId: Long)
+DELETE  /user/$uId<[0-9]*>/bankAccount/$baId<[0-9]*> controllers.BankAccounts.delete(uId: Long, baId: Long)
+PUT     /user/$uId<[0-9]*>/bankAccount/$baId<[0-9]*> controllers.BankAccounts.update(uId: Long, baId: Long)
+
+POST	/user/$uId<[0-9]*>/financialMovementType				controllers.FinancialMovementTypes.create(uId: Long)
+GET     /user/$uId<[0-9]*>/financialMovementTypes              	controllers.FinancialMovementTypes.find(uId: Long)
+DELETE  /user/$uId<[0-9]*>/financialMovementType/$fmtId<[0-9]*> controllers.FinancialMovementTypes.delete(uId: Long, fmtId: Long)
+PUT     /user/$uId<[0-9]*>/financialMovementType/$fmtId<[0-9]*> controllers.FinancialMovementTypes.update(uId: Long, fmtId: Long)
+
+POST	/user/financialMovementType/$fmtId<[0-9]*>/financialMovementSubtype				   controllers.FinancialMovementSubtypes.create(fmtId: Long)
+GET     /user/financialMovementType/$fmtId<[0-9]*>/financialMovementSubtypes               controllers.FinancialMovementSubtypes.find(fmtId: Long)
+DELETE  /user/financialMovementType/$fmtId<[0-9]*>/financialMovementSubtype/$fmsId<[0-9]*> controllers.FinancialMovementSubtypes.delete(fmtId: Long, fmsId: Long)
+PUT     /user/financialMovementType/$fmtId<[0-9]*>/financialMovementSubtype/$fmsId<[0-9]*> controllers.FinancialMovementSubtypes.update(fmtId: Long, fmsId: Long)
+
+POST	/user/$uId<[0-9]*>/financialMovement				controllers.FinancialMovements.create(uId: Long)
+GET     /user/$uId<[0-9]*>/financialMovements				controllers.FinancialMovements.find(uId: Long)
+GET     /user/$uId<[0-9]*>/financialMovements/amounts		controllers.FinancialMovements.amounts(uId: Long)
+DELETE  /user/$uId<[0-9]*>/financialMovement/$fmId<[0-9]*> 	controllers.FinancialMovements.delete(uId: Long, fmId: Long)
+PUT     /user/$uId<[0-9]*>/financialMovement/$fmId<[0-9]*> 	controllers.FinancialMovements.update(uId: Long, fmId: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

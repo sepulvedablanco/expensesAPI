@@ -1,0 +1,6 @@
+@(user: User)
+<usuario user="@user.getUser()">
+	<id>@user.getId()</id>
+	<nombre>@user.getName()</nombre>
+	<token>@user.getAuthToken()</token>
+</usuario>

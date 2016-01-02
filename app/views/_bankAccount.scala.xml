@@ -1,0 +1,11 @@
+@(bankAccount: BankAccount)
+<cuentaBancaria id="@bankAccount.getId()">
+	<iban>@bankAccount.getIban()</iban>
+	<entidad>@bankAccount.getEntity()</entidad>
+	<oficina>@bankAccount.getOffice()</oficina>
+	<digitoControl>@bankAccount.getControlDigit()</digitoControl>
+	<numeroCuenta>@bankAccount.getAccountNumber()</numeroCuenta>
+	<numeroCompleto>@bankAccount.getCompleteBankAccount()</numeroCompleto>
+	<saldo>@bankAccount.getBalance()</saldo>
+	<descripcion>@bankAccount.getDescription()</descripcion>
+</cuentaBancaria>

@@ -1,0 +1,4 @@
+@(financialMovementType: FinancialMovementType)
+<tipoMovimiento id="@financialMovementType.getId()">
+	<descripcion>@financialMovementType.getDescription()</descripcion>
+</tipoMovimiento>

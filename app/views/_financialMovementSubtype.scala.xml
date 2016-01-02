@@ -1,0 +1,4 @@
+@(financialMovementSubtype: FinancialMovementSubtype)
+<subtipoMovimiento id="@financialMovementSubtype.getId()">
+	<descripcion>@financialMovementSubtype.getDescription()</descripcion>
+</subtipoMovimiento>

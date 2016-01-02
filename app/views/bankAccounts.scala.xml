@@ -1,0 +1,6 @@
+@(bankAccounts: List[BankAccount])
+<cuentasBancarias>
+	@for(bankAccount <- bankAccounts) {
+		@_bankAccount(bankAccount)
+	}
+</cuentasBancarias>

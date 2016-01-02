@@ -1,0 +1,53 @@
+common.unsupported_format=Unsupported format
+common.page=Page
+common.page_total_movements=TotalMovements
+
+header.invalid_user_token=Invalid header user token
+
+user.invalid=Invalid user
+user.invalid_password=Invalid password
+user.duplicate_user=The user "{0}" already exist
+user.created=The user "{0}" has been created
+user.updated=User successfully updated
+user.deleted=User successfully deleted
+user.not_modified=It has not modified any value
+user.not_found=The user with ID {0} does not exist
+user.token_id_conflict=The logged in user is not the same as the URL parameter
+user.incorrect_number_of_parameters=Incorrect number of parameters.
+user.login_failure=An error has occurred performing the login.
+
+bankAccount.user_not_found=Invalid user token. User not found.
+bankAccount.invalid=Invalid bank account
+bankAccount.invalid_bank_account_user=The bank account is not associated with this user.
+bankAccount.duplicate=The bank account "{0}" already exist
+bankAccount.created=The bank account "{0}" has been created
+bankAccount.updated=Bank account successfully updated
+bankAccount.deleted=Bank account successfully deleted
+bankAccount.not_modified=It has not modified any value
+bankAccount.not_found=The bank account with ID {0} does not exist
+
+finanMovType.invalid_finan_mov_type_user=The financial movement type is not associated with this user
+finanMovType.invalid=Invalid financial movement type
+finanMovType.duplicate=The financial movement type "{0}" already exist
+finanMovType.created=The financial movement type "{0}" has been created
+finanMovType.updated=Financial movement type successfully updated
+finanMovType.deleted=Financial movement type successfully deleted
+finanMovType.not_modified=It has not modified any value
+finanMovType.not_found=The financial movement type with ID {0} does not exist
+
+finanMovSubtype.invalid_finan_mov_subtype_user=The financial movement subtype is not associated with this user
+finanMovSubtype.invalid_finan_mov_subtype_type=The financial movement subtype is not associated with this type
+finanMovSubtype.invalid=Invalid financial movement subtype
+finanMovSubtype.duplicate=The financial movement subtype "{0}" already exist
+finanMovSubtype.created=The financial movement subtype "{0}" has been created
+finanMovSubtype.updated=Financial movement subtype successfully updated
+finanMovSubtype.deleted=Financial movement subtype successfully deleted
+finanMovSubtype.not_modified=It has not modified any value
+finanMovSubtype.not_found=The financial movement subtype with ID {0} does not exist
+
+finanMov.invalid_finan_mov_user=The financial movement is not associated with this user
+finanMov.invalid=Invalid financial movement
+finanMov.created=The financial movement subtype "{0}" has been created
+finanMov.updated=You have to eliminate the movement and recreate it.
+finanMov.deleted=Financial movement successfully deleted
+finanMov.not_found=The financial movement with ID {0} does not exist

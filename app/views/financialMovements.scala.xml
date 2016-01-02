@@ -1,0 +1,9 @@
+@(financialMovements: List[FinancialMovement], totalMovements: Integer)
+<movimientos>
+	<totalMovimientos>@totalMovements</totalMovimientos>
+	<pagina>
+	@for(financialMovement <- financialMovements) {
+		@_financialMovement(financialMovement)
+	}
+	</pagina>
+</movimientos>
