@@ -193,6 +193,12 @@ public class BankAccount extends Model {
 		int sum = sumEntity + sumOffice;
 		int mod = sum % 11;
 		int digit1 = 11 - mod;
+		if(digit1 == 10) {
+			return 1;
+		}
+		if (digit1 == 11) {
+			return 0;
+		}
 		return digit1;
 	}
 
@@ -210,6 +216,12 @@ public class BankAccount extends Model {
 		int sum = anp1 + anp2 + anp3 + anp4 + anp5 + anp6 + anp7 + anp8 + anp9 + anp10;
 		int mod = sum % 11;
 		int digit2 = 11 - mod;
+		if(digit2 == 10) {
+			return 1;
+		}
+		if (digit2 == 11) {
+			return 0;
+		}
 		return digit2;
 	}
 
