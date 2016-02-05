@@ -1,9 +1,19 @@
 package helpers;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
+import models.BankAccount;
+
 import org.apache.http.entity.ContentType;
+
 import helpers.Constants.JsonResponseTag;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+
 import play.i18n.Messages;
 import play.libs.Json;
 import play.mvc.Http.Request;
@@ -32,6 +42,20 @@ public class ControllerHelper {
 	public static boolean acceptsXml(Request request) {
 		return (request.accepts(ContentType.APPLICATION_XML.getMimeType()) || 
 				request.accepts(ContentType.TEXT_XML.getMimeType()));
+	}
+	
+	public static String format(Request request, BigDecimal number) {
+		Locale locale = Locale.getDefault();
+		if(!request.acceptLanguages().isEmpty()) {
+			locale = new Locale(request.acceptLanguages().get(0).code());
+		}
+		
+        NumberFormat nf = NumberFormat.getNumberInstance(locale);
+        DecimalFormat df = (DecimalFormat) nf;
+		df.setMaximumFractionDigits(2);
+		df.setMinimumFractionDigits(2);
+
+		return df.format(number);
 	}
 
 }

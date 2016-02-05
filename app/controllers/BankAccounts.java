@@ -1,11 +1,16 @@
 package controllers;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import helpers.ActionAuthenticator;
 import helpers.Constants;
 import helpers.ControllerHelper;
 import helpers.Constants.Messages;
 import models.BankAccount;
 import models.User;
+import play.api.i18n.Lang;
 import play.data.Form;
 import play.libs.Json;
 import play.mvc.Controller;
@@ -193,5 +198,24 @@ public class BankAccounts extends Controller {
 
 		bankAccount.delete();
 		return ok(ControllerHelper.generateJsonResponse(44, Messages.BankAccount.DELETED));
+	}
+	
+	/**
+	 * Action method for GET /user/<uId>/bankAccount/amount.
+	 * 
+	 * @param uId user identifier
+	 *
+	 */
+	public Result amount(Long uId) {
+		User user = User.find.byId(uId);
+		if (user == null) {
+			return notFound(ControllerHelper.generateJsonResponse(45, Messages.User.NOT_FOUND, uId));
+		}
+		
+		if(!user.getUser().equals(request().username())) {
+			return badRequest(ControllerHelper.generateJsonResponse(46, Messages.User.TOKEN_ID_CONFLICT));
+		}
+
+		return ok(ControllerHelper.format(request(), BankAccount.getAmount(uId)));
 	}
 }

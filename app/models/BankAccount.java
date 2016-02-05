@@ -27,8 +27,12 @@ import org.hibernate.validator.constraints.Length;
 
 import play.data.validation.Constraints.Required;
 
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.Expression;
 import com.avaje.ebean.ExpressionList;
 import com.avaje.ebean.Model;
+import com.avaje.ebean.RawSql;
+import com.avaje.ebean.RawSqlBuilder;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import org.apache.commons.codec.binary.Base64;
@@ -223,6 +227,17 @@ public class BankAccount extends Model {
 			return 0;
 		}
 		return digit2;
+	}
+	
+	public static BigDecimal getAmount(Long userId) {
+		String sql = " select sum(balance) as balance from bank_account t0";
+		
+		RawSql rawSql = RawSqlBuilder.parse(sql).create();
+
+		BankAccount bankAccountAmount = Ebean.find(BankAccount.class).setRawSql(rawSql)
+				.where().addAll(find.where().eq("user_id", userId)).findUnique();
+
+		return bankAccountAmount == null || bankAccountAmount.getBalance() == null ? BigDecimal.ZERO : bankAccountAmount.getBalance();
 	}
 
 	public Long getId() {

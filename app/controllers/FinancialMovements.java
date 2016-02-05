@@ -156,11 +156,7 @@ public class FinancialMovements extends Controller {
     			bExpense, uId, typeId, typeDesc, subtypeId, subtypeDesc, bankAccountId, 
     			baDesc, iYear, iMonth);
 		
-		DecimalFormat df = new DecimalFormat();
-		df.setMaximumFractionDigits(2);
-		df.setMinimumFractionDigits(2);
-
-		return ok(df.format(amount));
+		return ok(ControllerHelper.format(request(), amount));
 	}
 	
 	/**
