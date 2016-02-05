@@ -7,6 +7,7 @@ PUT     /user/$uId<[0-9]*>                 controllers.Users.update(uId: Long)
 
 POST	/user/$uId<[0-9]*>/bankAccount				 controllers.BankAccounts.create(uId: Long)
 GET     /user/$uId<[0-9]*>/bankAccounts              controllers.BankAccounts.find(uId: Long)
+GET     /user/$uId<[0-9]*>/bankAccounts/amount		 controllers.BankAccounts.amount(uId: Long)
 DELETE  /user/$uId<[0-9]*>/bankAccount/$baId<[0-9]*> controllers.BankAccounts.delete(uId: Long, baId: Long)
 PUT     /user/$uId<[0-9]*>/bankAccount/$baId<[0-9]*> controllers.BankAccounts.update(uId: Long, baId: Long)
 
