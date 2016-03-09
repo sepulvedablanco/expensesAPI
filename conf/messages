@@ -14,7 +14,7 @@ user.not_modified=It has not modified any value
 user.not_found=The user with ID {0} does not exist
 user.token_id_conflict=The logged in user is not the same as the URL parameter
 user.incorrect_number_of_parameters=Incorrect number of parameters.
-user.login_failure=Username and/or Password is incorrect
+user.login_failure=Username and/or password is incorrect
 
 bankAccount.user_not_found=Invalid user token. User not found
 bankAccount.invalid=Invalid bank account
