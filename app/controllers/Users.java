@@ -57,7 +57,7 @@ public class Users extends Controller {
     	user = user.login();
 		
 		if(user == null) {
-			return internalServerError(ControllerHelper.generateJsonResponse(5, Messages.User.LOGIN_FAILURE));
+			return badRequest(ControllerHelper.generateJsonResponse(5, Messages.User.LOGIN_FAILURE));
 		}
 		
 		response().getHeaders().put(Constants.Headers.USER_TOKEN, user.getAuthToken());

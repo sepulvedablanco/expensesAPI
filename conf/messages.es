@@ -14,7 +14,7 @@ user.not_modified=No se ha modificado ningún valor
 user.not_found=El usuario con ID {0} no existe
 user.token_id_conflict=El usuario logueado no es el mismo que el del parametro de la URL
 user.incorrect_number_of_parameters=Número de parámetros incorrecto
-user.login_failure=Ha ocurrido un error realizando el login
+user.login_failure=user.login_failure=Username and/or Password is incorrect
 
 bankAccount.user_not_found=Token de usuario inválido. No se ha encontrado el usuario asociado
 bankAccount.invalid=Cuenta bancaria inválida
