@@ -174,6 +174,17 @@ public class FinancialMovement extends Model {
 		cSince.set(Calendar.DAY_OF_MONTH, 1);
 		cUntil.set(Calendar.DAY_OF_MONTH, cUntil.getActualMaximum(Calendar.DAY_OF_MONTH));
 
+        cSince.set(Calendar.HOUR_OF_DAY, 0);
+        cSince.set(Calendar.MINUTE, 0);
+        cSince.set(Calendar.SECOND, 0);
+        
+        cUntil.set(Calendar.HOUR_OF_DAY, 23);
+        cUntil.set(Calendar.MINUTE, 59);
+        cUntil.set(Calendar.SECOND, 59);
+
+        System.out.println(cSince);
+        System.out.println(cUntil);
+        
 		query.between(amount ? "transaction_date" : "transactionDate", cSince.getTime(), cUntil.getTime());
 
 		return query;
