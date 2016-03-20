@@ -5,8 +5,6 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import models.BankAccount;
-
 import org.apache.http.entity.ContentType;
 
 import helpers.Constants.JsonResponseTag;
